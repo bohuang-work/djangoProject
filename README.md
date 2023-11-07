@@ -42,11 +42,8 @@ A implementation fo RESTfuls API using Django REST framework
 
 ## endpoints
 
-- get all users: http://127.0.0.1:8080/v1/users/
-- create new users: http://127.0.0.1:8080/v1/users/
-- get user by id: http://127.0.0.1:8080/v1/user/{UUID}
-- update user by id: http://127.0.0.1:8080/v1/user/{UUID}
-- delete user by id: http://127.0.0.1:8080/v1/user/{UUID}
+- get all users / create users: http://127.0.0.1:8080/v1/users/
+- get / update / delete user by id: http://127.0.0.1:8080/v1/user/{UUID}
 - get user active: http://127.0.0.1:8080/v1/users/active/true
 - get user not active: http://127.0.0.1:8080/v1/users/active/false
 - get user less than age: http://127.0.0.1:8080/v1/users/age/lte/{age}
