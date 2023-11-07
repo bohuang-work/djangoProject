@@ -1,0 +1,7 @@
+- name: deploy Docker Compose stack
+  hosts: localhost
+  vars:
+    deployment_folder: "/djangoProject"
+  tasks:
+    - name: start django restAPI
+      ansible.builtin.shell: "cd {{deployment_folder}} && docker-compose up -d"

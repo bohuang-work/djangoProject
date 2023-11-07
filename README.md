@@ -2,9 +2,30 @@
 
 A implementation fo RESTfuls API using Django REST framework
 
+## Pre-requirements
+
+- python >= 3.11
+- pip
+- docker
+- ansible
+
+#### ubuntu
+
+```
+   python3 -m pip install ansible
+```
+
+#### mac os
+
+make sure you have brew installed on mac.
+
+```
+   brew install ansible
+```
+
 ## Setup
 
-### using python virtual environment
+#### using python virtual environment
 
 1. create a python virtual environment.
 
@@ -30,7 +51,7 @@ A implementation fo RESTfuls API using Django REST framework
   ./run.sh
 ```
 
-### using docker compose
+#### using docker compose
 
 1. start server:
 
@@ -42,6 +63,26 @@ A implementation fo RESTfuls API using Django REST framework
 
 ```
   docker compose down
+```
+
+## Deployments
+
+1. create a folder named djangoProject for deployments:
+
+```
+ansible-playbook ansible/deployment.yaml  --extra-vars "deployment_folder=/<find the full path>/djangoProject"
+```
+
+2. start the server:
+
+```
+ansible-playbook ansible/start_server.yaml  --extra-vars "deployment_folder=/<find the full path>/djangoProject"
+```
+
+3. stop the server:
+
+```
+ansible-playbook ansible/stop_server.yaml --extra-vars "deployment_folder=/<find the full path>/djangoProject"
 ```
 
 ## Endpoints

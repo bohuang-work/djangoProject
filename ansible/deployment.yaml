@@ -1,0 +1,22 @@
+- name: Deployment
+  hosts: localhost
+  vars:
+    repo_name: "djangoProject"
+    repo_url: "https://github.com/bohuang-work/djangoProject.git"
+    deployment_folder: "/djangoProject"
+  tasks:
+    - name: check if deployment folder exists
+      stat:
+        path: "{{deployment_folder}}"
+      register: target_folder_name
+    - name: Creates directory if deployment folder not exists
+      file:
+        path: "{{deployment_folder}}"
+        state: directory
+      when: not target_folder_name.stat.exists or not target_folder_name.stat.isdir
+    - name: clone repo
+      git:
+        repo: "{{repo_url}}"
+        dest: "{{deployment_folder}}"
+        clone: yes
+        update: yes
