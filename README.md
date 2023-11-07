@@ -2,7 +2,7 @@
 
 A implementation fo RESTfuls API using Django REST framework
 
-## setup
+## Setup
 
 ### using python virtual environment
 
