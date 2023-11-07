@@ -87,12 +87,12 @@ ansible-playbook ansible/stop_server.yaml --extra-vars "deployment_folder=/<find
 
 ## Endpoints
 
-- get all users / create users: http://127.0.0.1:8080/v1/users/
-- get / update / delete user by id: http://127.0.0.1:8080/v1/user/{UUID}
-- get user active: http://127.0.0.1:8080/v1/users/active/true
-- get user not active: http://127.0.0.1:8080/v1/users/active/false
-- get user less than age: http://127.0.0.1:8080/v1/users/age/lte/{age}
-- get user greater than age: http://127.0.0.1:8080/v1/users/age/gte/{age}
+- get all users / create users: http://0.0.0.0:8080/v1/users/
+- get / update / delete user by id: http://0.0.0.0:8080/v1/user/{UUID}
+- get user active: http://0.0.0.0:8080/v1/users/active/true
+- get user not active: http://0.0.0.0:8080/v1/users/active/false
+- get user less than age: http://0.0.0.0:8080/v1/users/age/lte/{age}
+- get user greater than age: http://0.0.0.0:8080//v1/users/age/gte/{age}
 
 ## Swagger
 
