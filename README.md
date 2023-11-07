@@ -4,6 +4,8 @@ A implementation fo RESTfuls API using Django REST framework
 
 ## setup
 
+### using python virtual environment
+
 1. create a python virtual environment.
 
 ```
@@ -26,6 +28,20 @@ A implementation fo RESTfuls API using Django REST framework
 
 ```
   ./run.sh
+```
+
+### using docker compose
+
+1. start server:
+
+```
+  docker compose up -d
+```
+
+2. stop server:
+
+```
+  docker compose down
 ```
 
 ## endpoints
