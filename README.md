@@ -93,3 +93,7 @@ ansible-playbook ansible/stop_server.yaml --extra-vars "deployment_folder=/<find
 - get user not active: http://127.0.0.1:8080/v1/users/active/false
 - get user less than age: http://127.0.0.1:8080/v1/users/age/lte/{age}
 - get user greater than age: http://127.0.0.1:8080/v1/users/age/gte/{age}
+
+## swager
+
+![alt text](https://github.com/bohuang-work/djangoProject/blob/main/static/django_rest_api.png)
