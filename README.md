@@ -44,7 +44,7 @@ A implementation fo RESTfuls API using Django REST framework
   docker compose down
 ```
 
-## endpoints
+## Endpoints
 
 - get all users / create users: http://127.0.0.1:8080/v1/users/
 - get / update / delete user by id: http://127.0.0.1:8080/v1/user/{UUID}
