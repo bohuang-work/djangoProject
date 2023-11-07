@@ -18,5 +18,8 @@ licenses.dump
 .idea/
 .vscode/
 
+# venv
+venv/
+
 # db
 db.sqlite3

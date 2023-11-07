@@ -1,5 +1,21 @@
-from django.contrib import admin
 from django.urls import path
-from userAPI.views import users
 
-urlpatterns = [path("", users)]
+from userAPI.views import (
+    User,
+    Users,
+    health,
+    get_user_active,
+    get_user_not_active,
+    get_user_less_than_age,
+    get_user_greater_than_age,
+)
+
+urlpatterns = [
+    path("health/", health),
+    path("user/<uuid:primary_key>", User.as_view()),
+    path("users/", Users.as_view()),
+    path("users/active/true", get_user_active),
+    path("users/active/false", get_user_not_active),
+    path("users/age/lte/<int:age>", get_user_less_than_age),
+    path("users/age/gte/<int:age>", get_user_greater_than_age),
+]
