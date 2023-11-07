@@ -22,22 +22,10 @@ A implementation fo RESTfuls API using Django REST framework
    pip3 install -r requirements.txt
 ```
 
-4. create db migrations.
+4. run migrations then start server.
 
 ```
-   python3 manage.py makemigrations
-```
-
-5. migrate db.
-
-```
-   python3 manage.py migrate
-```
-
-6. run server.
-
-```
-   python3 manage.py runserver 8080
+  ./run.sh
 ```
 
 ## endpoints

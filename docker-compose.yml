@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  django_server:
+    container_name: django_rest_api
+    build: .
+    ports:
+      - "8080:8080"
