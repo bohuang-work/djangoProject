@@ -3,11 +3,11 @@ from django.urls import path
 from userAPI.views import (
     User,
     Users,
-    health,
     get_user_active,
-    get_user_not_active,
-    get_user_less_than_age,
     get_user_greater_than_age,
+    get_user_less_than_age,
+    get_user_not_active,
+    health,
 )
 
 urlpatterns = [

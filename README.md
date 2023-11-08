@@ -70,7 +70,7 @@ make sure you have brew installed on mac.
 1. create a folder named djangoProject for deployments:
 
 ```
-ansible-playbook ansible/deployment.yaml  --extra-vars "deployment_folder=/<find the full path>/djangoProject"
+ansible-playbook ansible/setup.yaml  --extra-vars "deployment_folder=/<find the full path>/djangoProject"
 ```
 
 2. start the server:
