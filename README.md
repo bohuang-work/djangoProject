@@ -96,4 +96,6 @@ ansible-playbook ansible/stop_server.yaml --extra-vars "deployment_folder=/<find
 
 ## Swagger
 
-![alt text](https://github.com/bohuang-work/djangoProject/blob/main/static/django_rest_api.png)
+- visite swagger: http://0.0.0.0:8080/docs
+
+![alt text](https://github.com/bohuang-work/djangoProject/blob/main/static/swagger.png)

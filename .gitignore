@@ -17,6 +17,7 @@ licenses.dump
 *.sw*
 .idea/
 .vscode/
+.DS_Store
 
 # venv
 venv/
