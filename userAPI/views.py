@@ -73,26 +73,27 @@ def get_user_greater_than_age(request: Request, age: int):
 class User(APIView):
     """get / update / delete user."""
 
-    def __get_user_by_id(self, primary_key: UUID):
-        """query user from DB by id"""
+    def get(self, request: Request, primary_key: UUID):
+        """get user by id."""
         try:
             user_db = UserDB.objects.get(pk=primary_key)
-            return user_db
         except:
             return Response(
                 {"info": f"user with id {primary_key} is not found."},
                 status=status.HTTP_404_NOT_FOUND,
             )
-
-    def get(self, request: Request, primary_key: UUID):
-        """get user by id."""
-        user_db = self.__get_user_by_id(primary_key=primary_key)
         serializer = UserSerializer(instance=user_db)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request: Request, primary_key: UUID):
         """update user by id."""
-        user_db = self.__get_user_by_id(primary_key=primary_key)
+        try:
+            user_db = UserDB.objects.get(pk=primary_key)
+        except:
+            return Response(
+                {"info": f"user with id {primary_key} is not found."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
         serializer = UserSerializer(instance=user_db, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -101,6 +102,12 @@ class User(APIView):
 
     def delete(self, request: Request, primary_key: UUID):
         """delete user by id."""
-        user_db = self.__get_user_by_id(primary_key=primary_key)
+        try:
+            user_db = UserDB.objects.get(pk=primary_key)
+        except:
+            return Response(
+                {"info": f"user with id {primary_key} is not found."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
         user_db.delete()
         return Response({"delete": user_db.name}, status=status.HTTP_204_NO_CONTENT)
