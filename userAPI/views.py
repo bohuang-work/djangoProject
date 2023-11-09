@@ -3,8 +3,8 @@ from uuid import UUID
 from requests import Request
 from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from userAPI.models import UserDB
 from userAPI.serializer import UserSerializer
@@ -18,8 +18,10 @@ def health(request: Request):
 
 
 # Users
-class Users(APIView):
+class Users(GenericAPIView):
     """get all users / create users."""
+
+    serializer_class = UserSerializer
 
     def get(self, request: Request):
         """get all users."""
@@ -70,8 +72,10 @@ def get_user_greater_than_age(request: Request, age: int):
 
 
 # User
-class User(APIView):
+class User(GenericAPIView):
     """get / update / delete user."""
+
+    serializer_class = UserSerializer
 
     def get(self, request: Request, primary_key: UUID):
         """get user by id."""
