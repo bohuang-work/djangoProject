@@ -24,3 +24,6 @@ venv/
 
 # db
 db.sqlite3
+
+# test.py
+test.py

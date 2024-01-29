@@ -10,7 +10,7 @@ class UserDB(models.Model):
     name = models.CharField(max_length=64)
     age = models.IntegerField()
     title = models.CharField(max_length=128)
-    join_date = models.DateField()
+    join_date = models.DateField(auto_now_add=True)
     active = models.BooleanField()
 
     def __str__(self):
