@@ -1,9 +1,9 @@
 from django.urls import path
 
-from userAPI.views import UserDetail, UserList, health
+from userAPI.views import User, Users, health
 
 urlpatterns = [
     path("health/", health),
-    path("users/", UserList.as_view()),
-    path("user/<uuid:pk>", UserDetail.as_view()),
+    path("users/", Users.as_view()),
+    path("user/<uuid:pk>", User.as_view()),
 ]
