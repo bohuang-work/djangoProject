@@ -1,6 +1,8 @@
 from django.contrib import admin
 
+from userAPI.models.computer import ComputerDB
 from userAPI.models.job import JobDB
+from userAPI.models.office import OfficeDB
 from userAPI.models.user import UserDB
 
 
@@ -22,7 +24,7 @@ class UserDBModelAdmin(admin.ModelAdmin):
 admin.site.register(UserDB, UserDBModelAdmin)
 
 
-class UserDBModelAdmin(admin.ModelAdmin):
+class JobDBModelAdmin(admin.ModelAdmin):
     # Job API
     ordering = ["id"]
     list_display = (
@@ -36,4 +38,24 @@ class UserDBModelAdmin(admin.ModelAdmin):
     )  # Enable searching by name in the admin
 
 
-admin.site.register(JobDB, UserDBModelAdmin)
+admin.site.register(JobDB, JobDBModelAdmin)
+
+
+class ComputerDBModelAdmin(admin.ModelAdmin):
+    # Computer API
+    ordering = ["id"]
+    list_display = ["brand"]  # Fields to display in the admin list view
+    search_fields = ("brand",)  # Enable searching by name in the admin
+
+
+admin.site.register(ComputerDB, ComputerDBModelAdmin)
+
+
+class OfficeDBModelAdmin(admin.ModelAdmin):
+    # Computer API
+    ordering = ["id"]
+    list_display = ["name"]  # Fields to display in the admin list view
+    search_fields = ("name",)  # Enable searching by name in the admin
+
+
+admin.site.register(OfficeDB, OfficeDBModelAdmin)
