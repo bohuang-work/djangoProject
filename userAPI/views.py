@@ -1,11 +1,12 @@
+from django_q.tasks import schedule
 from requests import Request
 from rest_framework import generics, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-
 from userAPI.models import UserDB
 from userAPI.serializer import UserSerializer
+from userAPI.tasks import get_all_users
 
 
 # health

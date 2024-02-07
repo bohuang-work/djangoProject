@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "userAPI",
+    "djangoProject",
     "rest_framework",
     "rest_framework_swagger",
     "drf_yasg",
+    "django_q",
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,25 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# thema config of admin page
+SERVICE_THEME_CONFIG = {
+    "tab_title": "User Service",
+    "navbar_title": "User Service",
+    "index_items_list_title": "User Account Management",
+    "frontend_item_create": "Create User",
+    "frontend_item_delete": "Delete User",
+    "frontend_item_list": "User Accounts",
+    "frontend_item_has_create": False,
+}
+
+# settings.py example
+Q_CLUSTER = {
+    "name": " user_service",
+    "workers": 4,
+    "timeout": 3600,
+    "retry": 4000,
+    "ack_failures": True,
+    "catch_up": False,  # prevents running one tasks multiple times if multiple runs were missed
+    "orm": "default",  # use django default database
+}
